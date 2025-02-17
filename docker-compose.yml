@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  spring-app:
+    image: signos-vitales-app
+    container_name: spring-boot-app
+    ports:
+      - "8081:8081"
+    networks:
+      - kafka_kafka-net 
+
+networks:
+  kafka_kafka-net:
+    external: true  # Usa la red donde está Kafka
