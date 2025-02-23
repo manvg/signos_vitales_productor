@@ -13,8 +13,9 @@ services:
         max-size: "10m" 
         max-file: "3"
     networks:
-      - external_network
+      - kafka_kafka-net
 
 networks:
-  external_network:
-    driver: bridge
+  kafka_kafka-net:
+    external: true
+
