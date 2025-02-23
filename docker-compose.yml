@@ -1,14 +1,20 @@
-version: '3.8'
-
 services:
-  spring-app:
-    image: signos-vitales-app
-    container_name: spring-boot-app
+  signos-vitales-productor:
+    image: ms-signos-vitales
+    container_name: signos-vitales-productor
     ports:
       - "8081:8081"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "172.31.82.234:9092"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m" 
+        max-file: "3"
     networks:
-      - kafka_kafka-net 
+      - external_network
 
 networks:
-  kafka_kafka-net:
-    external: true  # Usa la red donde está Kafka
+  external_network:
+    driver: bridge
