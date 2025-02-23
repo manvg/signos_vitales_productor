@@ -1,6 +1,6 @@
 services:
   signos-vitales-productor:
-    image: ms-signos-vitales
+    image: ms-signos-vitales-productor
     container_name: signos-vitales-productor
     ports:
       - "8081:8081"
