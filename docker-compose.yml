@@ -5,7 +5,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      SPRING_KAFKA_BOOTSTRAP_SERVERS: "172.31.82.234:9093"
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: "172.31.82.234:9092"
     restart: always
     logging:
       driver: "json-file"
