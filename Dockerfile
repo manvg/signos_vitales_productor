@@ -5,7 +5,7 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 # Copiar el archivo JAR generado
-COPY target/signos_vitales-0.0.1-SNAPSHOT.jar app.jar
+COPY target/signos_vitales_productor-0.0.1-SNAPSHOT.jar app.jar
 
 # Exponer el puerto en el que corre la aplicación
 EXPOSE 8081
